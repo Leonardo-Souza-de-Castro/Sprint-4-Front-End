@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.Box_botao{
+  display: flex;
+  align-items: center;
+  width: 480px;
+  justify-content: space-between;
+}
+
+.pausar{
+  font-weight: 600;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(138, 23, 23);
+}
+
+.retomar{
+  font-weight: 600;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(23, 138, 38);
+}

@@ -43,12 +43,29 @@ class Clock extends React.Component {
     })
   }
 
+  pausarrelogio(){
+    clearInterval(this.timerID);
+    console.log('Relógio ' + this.timerID + " parado")
+  }
+
+  despausarrelogio(){
+    this.timerID = setInterval( () => {
+      this.thick()
+    }, 1000 );
+    console.log('Relógio Retomado')
+    console.log('Olá, eu sou o Relógio ' + this.timerID + "!")
+  }
+
   // Renderiza na tela o conteúdo do return
   render(){
     return(
       <div>
         <h1>Relógio</h1>
         <DataFormatada date={this.state.date} />
+        <div className = "Box_botao">
+        <button className = "pausar" onClick = {() => { this.pausarrelogio()}}>Parar Relógio</button>
+        <button className = "retomar" onClick ={() => {this.despausarrelogio()}}>Iniciar Relógio</button>
+        </div>
       </div>
     )
   }
@@ -60,8 +77,7 @@ function App() {
     // JSX
     <div className="App">
       <header className="App-header">
-        {/* Faz a chamada de dois componentes Clock */}
-        <Clock />
+        {/* Faz a chamada de um componentes Clock */}
         <Clock />
       </header>
     </div>
